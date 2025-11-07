@@ -1,0 +1,404 @@
+/* global*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #e5f5e0;
+  color: #0a2540;
+  overflow-x: hidden;
+}
+
+/* nav */
+.navbar {
+  background: #e5f5e0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.logo-img {
+  height: 45px;
+  width: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.brand-name {
+  font-size: 1.3rem;
+  color: #31a354;
+  font-weight: 700;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.8rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #ff9e00;
+  font-weight: 500;
+  transition: color 0.3s;
+  font-weight: 400;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #fff;
+}
+
+/* hero*/
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
+.hero-slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 2;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 3;
+  color: white;
+  max-width: 700px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  animation: fadeInDown 1.2s ease-in-out;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  animation: fadeInUp 1.5s ease-in-out;
+}
+
+.btn {
+  background: #31a354;
+  color: #0a2540;
+  padding: 0.9rem 2rem;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, #ff9e00, #ffb703);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255, 183, 3, 0.4);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* destinations */
+.featured {
+  padding: 5rem 2rem;
+  background: #fff;
+  text-align: center;
+}
+
+.featured h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2.5rem;
+  color: #31a354;
+  font-weight: 700;
+}
+
+.destinations-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.destination-card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease;
+}
+
+.destination-card:hover {
+  transform: translateY(-8px);
+}
+
+.destination-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.destination-card:hover img {
+  transform: scale(1.05);
+}
+
+.destination-card h3 {
+  margin: 1rem 0 0.5rem;
+  color: #0a2540;
+}
+
+.destination-card p {
+  color: #555;
+  font-size: 0.9rem;
+  padding: 0 1rem 1.2rem;
+}
+
+/* travel */
+.packages {
+  padding: 5rem 2rem;
+  background: linear-gradient(to bottom, #f9fafc, #eef2f5);
+  text-align: center;
+}
+
+.packages h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2.5rem;
+  color: #31a354;
+  font-weight: 700;
+}
+
+.packages-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.package-card {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease;
+  position: relative;
+}
+
+.package-card:hover {
+  transform: translateY(-8px);
+}
+
+.package-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.discount-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: #ff4757;
+  color: white;
+  padding: 6px 12px;
+  font-weight: bold;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.package-card h3 {
+  margin: 1rem 0 0.4rem;
+  color: #0a2540;
+}
+
+.package-card p {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.price {
+  display: block;
+  margin: 1rem 0;
+  color: #0a2540;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.price small {
+  text-decoration: line-through;
+  color: gray;
+  font-size: 0.9rem;
+  margin-left: 5px;
+}
+
+.book-btn {
+  background: linear-gradient(135deg, #ffb703, #ff9e00);
+  border: none;
+  padding: 0.8rem 1.6rem;
+  border-radius: 30px;
+  font-weight: 600;
+  color: #0a2540;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.book-btn:hover {
+  background: linear-gradient(135deg, #ff9e00, #ffb703);
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(255, 183, 3, 0.4);
+}
+
+/* team */
+.team {
+  background: #ffffff;
+  text-align: center;
+  padding: 5rem 2rem;
+}
+
+.team h2 {
+  font-size: 2.2rem;
+  margin-bottom: 2.5rem;
+  color: #31a354;
+  font-weight: 700;
+}
+
+.team-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.team-card {
+  background: #f7f9fb;
+  padding: 1.5rem;
+  border-radius: 15px;
+  width: 250px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.team-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  object-fit: cover;
+  height: 250px;
+}
+
+.team-card h3 {
+  color: linear-gradient(135deg, #ff9e00, #ffb703);
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+}sssssss
+
+.team-card p {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.bio {
+  margin-top: 0.5rem;
+  font-style: italic;
+  color: #444;
+}
+
+
+/* footer */
+footer {
+  background: #0a2540;
+  color: white;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+  margin-top: 3rem;
+}
+
+/* responsive*/
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .nav-links {
+    gap: 1rem;
+  }
+
+  .team-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
