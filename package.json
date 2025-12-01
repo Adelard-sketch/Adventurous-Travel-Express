@@ -1,0 +1,37 @@
+{
+  "name": "adventurous-travel-express",
+  "version": "1.0.0",
+  "description": "Complete travel booking platform for flights, tours, taxis, and parks",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "nodemon backend/server.js",
+    "server": "nodemon backend/server.js"
+  },
+  "keywords": [
+    "travel",
+    "booking",
+    "tourism",
+    "express",
+    "mongodb"
+  ],
+  "author": "Adventurous Travel Express",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.0.3",
+    "stripe": "^20.0.0"
+  },
+  "devDependencies": {
+    "axios": "^1.13.2",
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  }
+}
