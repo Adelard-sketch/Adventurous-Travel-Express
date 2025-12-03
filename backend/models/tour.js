@@ -5,10 +5,7 @@ const TourSchema = new mongoose.Schema({
   description: { type: String, text: true },
   price: { type: Number, required: true },
   durationDays: Number,
-  startLocations: [{ 
-    type: { type: String, enum:['Point'], default: 'Point' },
-    coordinates: { type: [Number] } 
-  }],
+  startLocations: [String], // Simplified to just store location names
   images: [String],
   capacity: Number,
   availableDates: [{ date: Date, seatsLeft: Number }],
@@ -18,6 +15,5 @@ const TourSchema = new mongoose.Schema({
 });
 
 TourSchema.index({ title: 'text', description: 'text', tags: 'text' });
-TourSchema.index({ 'startLocations': '2dsphere' });
 
 module.exports = mongoose.model('Tour', TourSchema);

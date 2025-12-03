@@ -63,7 +63,7 @@ const vehicleTypesData = [
 ];
 
 // Connect to MongoDB
-mongoose.connect(process.env.MONGO_URI || 'mongodb://localhost:27017/adventurous-travel')
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/adventurous-travel')
   .then(() => console.log('✅ MongoDB Connected'))
   .catch(err => console.error('❌ MongoDB connection error:', err));
 
